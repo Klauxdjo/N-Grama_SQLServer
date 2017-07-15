@@ -5,11 +5,11 @@ Praticamente em todo trabalho de mineração de texto que envolva análise de um
 Para quem ainda não domina estes conceitos, n-gramas são sequências de palavras significativas de um texto, e como eu mencionei palavras significativas, já deu para perceber que algumas outras não são consideradas descartáveis, são as chamadas _Stop Words_.
 
 Talvez um exemplo torne mais claro. Consideremos o texto abaixo:
-<pre>"Ninguém podia entrar nela não, porque na casa não tinha chão..." <pre>
+<pre>"Ninguém podia entrar nela não, porque na casa não tinha chão..." </pre>
 
 Neste caso, podemos considerar como descartáveis as palavras: *não* e *na*, além de outros símbolos gráficos (*,*).
 O novo texto seria: 
-<pre>"Ninguém podia entrar nela porque casa tinha chão..." <pre>
+<pre>"Ninguém podia entrar nela porque casa tinha chão..." </pre>
 
 Poderíamos formar n-gramas de diversos níveis, por exemplo:
 
