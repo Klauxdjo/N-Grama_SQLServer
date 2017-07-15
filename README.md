@@ -13,15 +13,15 @@ O novo texto seria:
 
 Poderíamos formar n-gramas de diversos níveis, por exemplo:
 
-   | Bigramas        | Trigramas            | Quadrigramas              | Nível 5
---------------------------------------------------------------------------------------------------------------------------
-+1 | Ninguém podia   | Ninguém podia entrar | Ninguém podia entrar nela | Ninguém podia entrar nela porque
-+2 | podia entrar    | podia entrar nela    | podia entrar nela porque  | podia entrar nela porque casa
-+3 | entrar nela     | entrar nela porque   | entrar nela porque casa   | entrar nela porque casa tinha
-+4 | nela porque     | nela porque casa     | nela porque casa tinha    | nela porque casa tinha chão
-+5 | porque casa     | porque casa tinha    | porque casa tinha chão    |
-+6 | casa tinha      | casa tinha chão      |                           |
-+7 | tinha chão      |                      |                           |
+ Bigramas        | Trigramas            | Quadrigramas              | Nível 5
+-----------------------------------------------------------------------------------------------------------------------
+ Ninguém podia   | Ninguém podia entrar | Ninguém podia entrar nela | Ninguém podia entrar nela porque
+ podia entrar    | podia entrar nela    | podia entrar nela porque  | podia entrar nela porque casa
+ entrar nela     | entrar nela porque   | entrar nela porque casa   | entrar nela porque casa tinha
+ nela porque     | nela porque casa     | nela porque casa tinha    | nela porque casa tinha chão
+ porque casa     | porque casa tinha    | porque casa tinha chão    |
+ casa tinha      | casa tinha chão      |                           |
+ tinha chão      |                      |                           |
 
 Hoje temos uma excelente gama de alternativas para extrair n-gramas de um texto, desde ferramentas sem código, como por exemplo, o Rapid Miner, até bibliotecas sofisticadas que permitem fazê-lo a partir de, praticamente, qualquer linguagem (com destaque às bibliotecas em Python).
 Apesar disso, pode ser interessante fazer essa extração diretamente no SQL-Server (ou, com alguma adaptação, em qualquer outro banco relacional). Com o intuito de facilitar quem quiser se aventurar por esse caminho, segue uma implementação funcional que, recebido um texto como parametro, retorna uma tabela com todos os n-gramas formados (pode-se escolher o nível do n-grama a partir de 3 até 6).
