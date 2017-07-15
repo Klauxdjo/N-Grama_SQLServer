@@ -14,7 +14,7 @@ O novo texto seria:
 Poderíamos formar n-gramas de diversos níveis, por exemplo:
 
  Bigramas        | Trigramas            | Quadrigramas              | Nível 5
------------------------------------------------------------------------------------------------------------------------
+-----------------|----------------------|---------------------------|----------------------------------
  Ninguém podia   | Ninguém podia entrar | Ninguém podia entrar nela | Ninguém podia entrar nela porque
  podia entrar    | podia entrar nela    | podia entrar nela porque  | podia entrar nela porque casa
  entrar nela     | entrar nela porque   | entrar nela porque casa   | entrar nela porque casa tinha
