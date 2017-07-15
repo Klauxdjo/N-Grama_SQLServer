@@ -36,12 +36,12 @@ FROM dbo.fn_ngrama('Variável do tipo TEXT contendo texto livremente digitado, e
 Em um banco relacional, normalmente o texto será uma coluna nalguma tabela, então pode-se utilizar a função através de um CURSOR que recupere sequencialmente o conteúdo coluna de cada linha, ou alternativamente a função pode ser eliminada, transformando seus comandos para que acessem diretamente a tabela, tratando a coluna que contém o texto.  
 
 ## Passos realizados no código:
-+1 Cada caráter do texto é validado em uma lista de caracteres e traduzido de acordo com o padrão especificado, portanto se for uma letra, será convertida para maiúscula, e terá a acentuação removida;
-+2 Depois são descartadas as palavras de ligação (_Stop Words_);
-+3 O passo seguinte é registrar a palavra, numerando a sequencia em que aparece;
-+4 Por fim são listadas as palavras sequenciais, a partir dos parametros solicitados.
++ Cada caráter do texto é validado em uma lista de caracteres e traduzido de acordo com o padrão especificado, portanto se for uma letra, será convertida para maiúscula, e terá a acentuação removida;
++ Depois são descartadas as palavras de ligação (_Stop Words_);
++ O passo seguinte é registrar a palavra, numerando a sequencia em que aparece;
++ Por fim são listadas as palavras sequenciais, a partir dos parametros solicitados.
 
 ### Observações:
--1 Normalmente a remoção de acentos é uma boa prática, por evitar que palavras deixadas sem acento por engano, ou acentuadas de maneira incorreta, não sejam consideradas distintas, das palavras corretamente grafadas. No entanto esta atitude pode ter um efeito negativo, por exemplo, as palavras *Maçã* (fruta), *Maça* (arma) e *Maca* (de hospital), tem sentidos muito diferentes, mas a remoção dos acentos igualaria o significado de todas;
--2 Uma opção comum no tratamento de palavras, é aplicar a técnica de stemming, que consiste em cortar o final das palavras, para reduzir suas possíveis flexões. Particularmente não gosto muito dessa técnica para a língua portuguesa, e ela não é contemplada no algoritmo acima;
--3 Uma outra técnica, mais elaborada, chamada de *Lemmatização* consiste na análise morfológica da palavra, para retornar a palavra à sua forma básica. Está técnica também não foi aplica no programa.
+- Normalmente a remoção de acentos é uma boa prática, por evitar que palavras deixadas sem acento por engano, ou acentuadas de maneira incorreta, não sejam consideradas distintas, das palavras corretamente grafadas. No entanto esta atitude pode ter um efeito negativo, por exemplo, as palavras *Maçã* (fruta), *Maça* (arma) e *Maca* (de hospital), tem sentidos muito diferentes, mas a remoção dos acentos igualaria o significado de todas;
+- Uma opção comum no tratamento de palavras, é aplicar a técnica de stemming, que consiste em cortar o final das palavras, para reduzir suas possíveis flexões. Particularmente não gosto muito dessa técnica para a língua portuguesa, e ela não é contemplada no algoritmo acima;
+- Uma outra técnica, mais elaborada, chamada de *Lemmatização* consiste na análise morfológica da palavra, para retornar a palavra à sua forma básica. Está técnica também não foi aplica no programa.
