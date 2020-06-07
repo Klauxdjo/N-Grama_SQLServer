@@ -1,8 +1,8 @@
 # N-Grama_SQLServer
 Função T-SQL para extrair n-gramas de nível 3 até 6 a partir de uma variável texto.
 
-Praticamente em todo trabalho de mineração de texto que envolva análise de um texto livre, como uma observação digitada pelo usuário, precisaremos extrair os n-gramas que compõem esse texto.
-Para quem ainda não domina estes conceitos, n-gramas são sequências de palavras significativas de um texto, e como eu mencionei palavras significativas, já deu para perceber que algumas outras não são consideradas descartáveis, são as chamadas _Stop Words_.
+Praticamente em todo trabalho de mineração de texto que envolva análise em um texto livre, como uma observação digitada pelo usuário, precisaremos extrair os n-gramas que compõem esse texto.
+Para quem ainda não domina estes conceitos, n-gramas são as sequências de palavras significativas do texto, e já que mencionamos _palavras significativas_, podemos deduzir que algumas outras palavras serão "descartáveis", são as chamadas _Stop Words_.
 
 Talvez um exemplo torne mais claro. Consideremos o texto abaixo:
 <pre>"Ninguém podia entrar nela não, porque na casa não tinha chão..." </pre>
@@ -13,7 +13,7 @@ O novo texto seria:
 
 Poderíamos formar n-gramas de diversos níveis, por exemplo:
 
- Bigramas        | Trigramas            | Quadrigramas              | Nível 5
+ Bigramas        | Trigramas            | Quadrigramas              | N-Grama de nível 5
 -----------------|----------------------|---------------------------|----------------------------------
  Ninguém podia   | Ninguém podia entrar | Ninguém podia entrar nela | Ninguém podia entrar nela porque
  podia entrar    | podia entrar nela    | podia entrar nela porque  | podia entrar nela porque casa
@@ -42,6 +42,6 @@ Em um banco relacional, normalmente o texto será uma coluna nalguma tabela, ent
 + Por fim são listadas as palavras sequenciais, a partir dos parametros solicitados.
 
 ### Observações:
-- Normalmente a remoção de acentos é uma boa prática, por evitar que palavras deixadas sem acento por engano, ou acentuadas de maneira incorreta, não sejam consideradas distintas, das palavras corretamente grafadas. No entanto esta atitude pode ter um efeito negativo, por exemplo, as palavras *Maçã* (fruta), *Maça* (arma) e *Maca* (de hospital), tem sentidos muito diferentes, mas a remoção dos acentos igualaria o significado de todas;
+- Normalmente a remoção de acentos é uma boa prática, por evitar que palavras deixadas sem acento por engano, ou acentuadas de maneira incorreta, sejam consideradas distintas, das palavras corretamente grafadas. No entanto esta atitude pode ter um efeito negativo, por exemplo, as palavras *Maçã* (fruta), *Maça* (arma de guerra) e *Maca* (de hospital), tem sentidos muito diferentes, mas a remoção dos acentos igualaria o significado de todas;
 - Uma opção comum no tratamento de palavras, é aplicar a técnica de stemming, que consiste em cortar o final das palavras, para reduzir suas possíveis flexões. Particularmente não gosto muito dessa técnica para a língua portuguesa, e ela não é contemplada no algoritmo acima;
-- Uma outra técnica, mais elaborada, chamada de *Lemmatização* consiste na análise morfológica da palavra, para retornar a palavra à sua forma básica. Está técnica também não foi aplica no programa.
+- Uma outra técnica, mais elaborada, chamada de *Lemmatização* consiste na análise morfológica da palavra, para retornar a palavra à sua forma básica. Está técnica também não foi aplicada no programa.
